@@ -103,3 +103,9 @@ This will automatically try to lint the code. Some manual changes may also be ne
   ```sh
   make dev-front
   ```
+
+## Technology used
+
+- Chalice as serverless framework
+- Boto3 as AWS SDK
+- Vanilla javascript as UI script
