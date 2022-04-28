@@ -64,7 +64,7 @@ This will automatically try to lint the code. Some manual changes may also be ne
 - Environment varialbe setup
 
   - Copy ".env.defaults" file and change its name to ".env".
-  - Set environment variables with your database host, name and credential.
+  - Set environment variables with your AWS credential and environment setup.
 
     - ACCESS_KEY: AWS Access Key ID
     - SECRET_KEY: AWS Secret Access Key
