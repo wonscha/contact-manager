@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Manager</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+</head>
+<body class="w3-theme-14">
+  <div style="min-width:400px">
+    <div class="w3-bar w3-large w3-theme-d4">
+      <span class="w3-bar-item" style="font-size:1.5rem;">Contact Manager</span>
+    </div>
+
+    <div class="w3-container w3-content">
+      <p class="w3-opacity" style="font-size:1.5rem;"><b>Save Contact</b></p>
+      <div class="w3-panel w3-white w3-card w3-display-container w3-center" style="padding: 2rem 1rem;">
+        <div class="w3-display-container w3-left" style="width:45%">
+          <div>
+            <input type="file" id="file" name="file" accept="image/*" style="width:15rem;"/>
+            <input type="submit" class="w3-button w3-theme-d1" value="Extract Info" onclick="uploadAndExtract()"
+             style="border-radius: 1rem;">
+            <hr>
+          </div>
+          <div id="view" style="display: none;">
+            <img id="image" width="350">
+            <hr>
+          </div>
+        </div>
+        <div class="w3-display-container w3-right w3-cell w3-cell-middle" style="width:45%">
+          <fieldset>
+            <legend>Extracted Information</legend>
+            <table style="border-spacing: 1rem 1rem;">
+              <tr>
+                <th style="font-weight:100;">
+                  <label for="name">Name</label>
+                </th>
+                <th style="font-weight:100;">
+                  <input type="text" id="name" name="name"/>
+                </th>
+              </tr>
+              <tr>
+                <th style="font-weight:100;">
+                  <label for="phone">Telephone</label>
+                </th>
+                <th style="font-weight:100;">
+                  <input type="tel" id="phone" name="phone"/>
+                </th>
+              </tr>
+              <tr>
+                <th style="font-weight:100;">
+                  <label for="email">Email</label>
+                </th>
+                <th style="font-weight:100;">
+                  <input type="email" id="email" name="email"/>
+                </th>
+              </tr>
+              <tr>
+                <th style="font-weight:100;">
+                  <label for="website">Company Website</label>
+                </th>
+                <th style="font-weight:100;">
+                  <input type="text" id="website" name="website"/>
+                </th>
+              </tr>
+              <tr>
+                <th style="font-weight:100;">
+                  <label for="address">Company Address</label>
+                </th>
+                <th style="font-weight:100;">
+                  <input type="text" id="address" name="address"/>
+                </th>
+              </tr>
+            </table>
+            <div class="w3-display-container w3-center">
+              <input type="submit" class="w3-button w3-theme-d1" id="save" value="Save Contact" onclick="saveContact()" disabled
+              style="border-radius: 1rem;"/>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-container w3-content">
+      <p>
+        <b class="w3-opacity" style="font-size:1.5rem;">Search By Name</b>
+        <input type="text" placeholder="Ben" id="search-name" style="margin: 0 2rem;">
+        <input type="submit" class="w3-button w3-theme-d1" value="Search" onclick="retrieveAndDisplayContacts()"
+        style="border-radius: 1rem;">
+      </p>
+      <div class="w3-panel w3-white w3-card w3-display-container w3-center">
+        <div id="contacts"> </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
