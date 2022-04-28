@@ -6,10 +6,27 @@ Saved images can be retrived by inputting part of name of the contact.
 
 This package uses AI capabilities of AWS services as follows.
 
-- Text detection: AWS Rekognition
+- Text detection: Amazon Rekognition
 - Entity recognition: Amazon Comprehend / Amazon Comprehend Medical
 
-## Interaction Diagram
+It also uses AWS storage and database services.
+
+- Storage: Amazon S3
+- Database: Amazon Dynamodb
+
+## Interaction Diagrams
+
+### User story 1 - Extract
+
+![user story 1](https://github.com/wonscha/contact-manager/blob/main/docs/screenshot_extract.png)
+
+### User story 2 - Save
+
+![user story 2](https://github.com/wonscha/contact-manager/blob/main/docs/screenshot_save.png)
+
+### User stroy 3 - Search by name
+
+![user story 3](https://github.com/wonscha/contact-manager/blob/main/docs/screenshot_search.png)
 
 ## Requirements
 
@@ -40,42 +57,47 @@ From the base directory:
 
 This will automatically try to lint the code. Some manual changes may also be needed.
 
-### To install new packages
-
-From the base directory:
-
-    pipenv install PACKAGE_NAME
-
-### Test on local
+### Development environment setup
 
 - Environment varialbe setup
 
   - Copy ".env.defaults" file and change its name to ".env".
   - Set environment variables with your database host, name and credential.
 
+    ACCESS_KEY: AWS Access Key ID
+    SECRET_KEY: AWS Secret Access Key
+    S3_BUCKET: AWS S3 bucket name
+    DB_TABLE: AWS Dynamodb table name
+    REGION_NAME: AWS region name
+
+- Dependency setup
+
+  - To install dependencies on pipenv virtual environment:
+
+  ```sh
+  make deps
+  ```
+
 - Pipenv virtual environment activation
 
   - To activate the virtual environment, from the base directory:
 
-    pipenv shell
+  ```sh
+  make env
+  ```
 
-- Run lambda_function python file
+- Run development server
 
-  - /src and run lambda_function.py.
+  - To run development server:
 
-    python3 lambda_function.py
+  ```sh
+  make dev-server
+  ```
 
-## Deployement
+- Run user interface
 
-This package is designed to run on AWS lambda service.
-For deployment, a .zip file archive is used which includes application code and its dependencies.
-The following steps guide you the way to deploy this package to production.
+  - To run user interface:
 
-### Build
-
-From the base directory:
-
-    make build
-
-It copies all source code and dependencies to /deploy folder.
-Then it generates engagement_count_report.zip which can then be uploaded to the engagment_count_report lambda function.
+  ```sh
+  make dev-front
+  ```
