@@ -4,6 +4,8 @@ Contact Manager is an web application that enables users to manage contacts.
 Users of Contact Manager can easily extract information from business card by simply uploading an image of business card.
 Saved images can be retrived by inputting part of name of the contact.
 
+![demo gif](https://github.com/wonscha/contact-manager/blob/main/docs/demo.gif)
+
 This package uses AI capabilities of AWS services as follows.
 
 - Text detection: Amazon Rekognition
@@ -64,11 +66,11 @@ This will automatically try to lint the code. Some manual changes may also be ne
   - Copy ".env.defaults" file and change its name to ".env".
   - Set environment variables with your database host, name and credential.
 
-    ACCESS_KEY: AWS Access Key ID
-    SECRET_KEY: AWS Secret Access Key
-    S3_BUCKET: AWS S3 bucket name
-    DB_TABLE: AWS Dynamodb table name
-    REGION_NAME: AWS region name
+    - ACCESS_KEY: AWS Access Key ID
+    - SECRET_KEY: AWS Secret Access Key
+    - S3_BUCKET: AWS S3 bucket name
+    - DB_TABLE: AWS Dynamodb table name
+    - REGION_NAME: AWS region name
 
 - Dependency setup
 
