@@ -45,12 +45,6 @@ This repo uses pipenv as its package manager. To install:
 
 It is also important to make sure Python 3.8 is installed.
 
-### Installing dependencies
-
-From the base directory:
-
-    make deps
-
 ### Linting
 
 From the base directory:
@@ -74,7 +68,7 @@ This will automatically try to lint the code. Some manual changes may also be ne
 
 - Dependency setup
 
-  - To install dependencies on pipenv virtual environment:
+  - To install dependencies on pipenv virtual environment, from the base directory:
 
   ```sh
   make deps
@@ -90,7 +84,7 @@ This will automatically try to lint the code. Some manual changes may also be ne
 
 - Run development server
 
-  - To run development server:
+  - To run development server, from the base directory:
 
   ```sh
   make dev-server
@@ -98,7 +92,7 @@ This will automatically try to lint the code. Some manual changes may also be ne
 
 - Run user interface
 
-  - To run user interface:
+  - To run user interface, from the base directory:
 
   ```sh
   make dev-front
